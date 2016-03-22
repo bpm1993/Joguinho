@@ -58,8 +58,6 @@ function Player(imgSRC){
 	
 }
 
-
-
 //--------------------------------------------------------------------
 
 function Block(imgSRC, layer){
@@ -114,9 +112,9 @@ function printMatrix(rows){
 }
 
 function createLayer(imgSRC, vector){
-	for(var cont = 0; cont < 20; cont++){
-		globalCont++;
-		if(globalCont == 20){
+	for(var cont = 0; cont < 30; cont++){
+		globalCont++;	
+		if(globalCont == 30){
 			globalCont = 0;
 		}
 		var block = new Block(imgSRC, vector);
@@ -127,17 +125,17 @@ function createLayer(imgSRC, vector){
 function createFloor(){
 	for(var cont = 0; cont < 10; cont++){
 		if(cont == 0){
-			createLayer("textures/grassDirtBlock.png", cont)
+			createLayer("textures/textures2.png", cont)
 		} else if(cont > 0 && cont < 3){
-			createLayer("textures/dirtBlock.png", cont)
+			createLayer("textures/textures3.png", cont)
 		} else {
-			createLayer("textures/stoneBlock.png", cont)
+			createLayer("textures/textures4.png", cont)
 		}
 	}
 }
 
 
-function start(){
+function init(){
 	
 	matrix = createArray(10, 20);
 
@@ -164,7 +162,7 @@ function move(e){
 	player.updatePos();
 }
 
-start();
+init();
 
 window.addEventListener("keydown", move);
 
