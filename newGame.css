@@ -1,0 +1,32 @@
+html,body { 
+	background: #06c;
+	vertical-align:top;
+}
+
+#blocks {
+	position: fixed;
+	float:top;
+	left: 100px;
+	top: 100px;
+}
+
+.block{
+	transform-origin: 50% 50% !important;
+	position: absolute;
+	background: #000;
+}
+
+#player{
+	position: fixed;
+	float:top;
+	left: 100px;
+	top: 100px;
+}
+
+.player{
+	transform-origin: 50% 50% !important;
+	position: absolute;
+	
+}
+
+
