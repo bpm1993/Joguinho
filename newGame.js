@@ -1,19 +1,6 @@
-var line0 = [];
-var line1 = [];
-var line2 = [];
-var line3 = [];
-var line4 = [];
-var line5 = [];
-var line6 = [];
-var line7 = [];
-var line8 = [];
-var line9 = [];
-
 var matrix;
 var player;
 var globalCont = 0;
-
-
 
 function Player(imgSRC){
 	var self = this;
@@ -37,7 +24,6 @@ function Player(imgSRC){
 		this.element.style.width = 32 + "px";
 		this.element.style.height = 32 + "px";
 	}
-	
 	
 	this.moveUp = function(){
 		this.posY--;
@@ -65,31 +51,61 @@ function Block(imgSRC, layer){
 		var elm = document.createElement("img");
 		elm.classList.add("block");
 		elm.src = imgSRC;
+		elm.id = "backLayer" + layer + globalCont;
 		document.getElementById("blocks").appendChild(elm);
+		elm.style.zIndex = 0;
+		
 		return elm;
+	}
+		
+	this.createFrontLayer = function(){
+		var elm = document.createElement("div");
+		elm.classList.add("blockFrontLayer");
+		elm.id = "frontLayer" + layer + globalCont;
+		document.getElementById("blocks").appendChild(elm);
+		elm.style.zIndex = 1;
+		
+		return elm
+	}
+	
+	this.destroy = function(){
+		delete this.type;
 	}
 	
 	this.updatePos = function(){
 		this.element.style.left = globalCont * 32 + "px";
 		this.element.style.top = layer * 32 + "px";
+		this.frontLayer.style.left = globalCont * 32 + "px";
+		this.frontLayer.style.top = layer * 32 + "px";
 	}
 	
 	this.setSize = function(){
 		this.element.style.width = 32 + "px";
 		this.element.style.height = 32 + "px";
-	}
+		this.frontLayer.style.width = 32 + "px";
+		this.frontLayer.style.height = 32 + "px";
+	}	
 	
-	this.addToVector = function(){
+	this.changeVisibility = function(){
+		if(this.visible == true){
+			this.visible = false;
+			this.frontLayer.style.zIndex--;
+		} else {
+			this.visible = true;
+			this.frontLayer.style.zIndex++;
+		}
 		
 	}
 	
 	this.type = 0;
 	this.visible = false;
-	this.pos = [layer][line0.length];
+	this.pos = [layer][matrix[layer].length];
 	this.element = this.createElement();
+	this.frontLayer = this.createFrontLayer();
+	
 	this.setSize();
 	this.updatePos();
-	this.addToVector();
+	
 }
 
 //--------------------------------------------------------------------
@@ -134,10 +150,8 @@ function createFloor(){
 	}
 }
 
-
 function init(){
-	
-	matrix = createArray(10, 20);
+	matrix = createArray(10, 30);
 
 	createFloor();
 

@@ -13,7 +13,6 @@ html,body {
 .block{
 	transform-origin: 50% 50% !important;
 	position: absolute;
-	background: #000;
 }
 
 #player{
@@ -29,4 +28,16 @@ html,body {
 	background: red;
 }
 
+#frontLayers{
+	position: fixed;
+	float:top;
+	left: 100px;
+	top: 100px;
+}
 
+.blockFrontLayer{
+	transform-origin: 50% 50% !important;
+	position: absolute;
+	background: black;
+	border: 0px;
+}
