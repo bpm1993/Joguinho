@@ -1,0 +1,14 @@
+Código -
+Arrumar o bug dos cantos bottom e right.
+Acrescentar o end day.
+Acrescentar valor as gemas coletadas.
+Acrescentar resistencia do player e dos blocos;
+Criar o end game.
+Criar "HUD".
+	Se Possivel -
+	Criar loja e seus upgrades.
+
+Arte -
+Criar Passaros.
+Mais ores raros.
+Item do end game.

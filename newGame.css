@@ -41,3 +41,8 @@ html,body {
 	background: black;
 	border: 0px;
 }
+
+.Clouds{
+	transform-origin: 50% 50% !important;
+	position: absolute;
+}
