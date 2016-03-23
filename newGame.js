@@ -42,7 +42,7 @@ function Cloud(){
 function Player(imgSRC){
 	this.createElement = function(){
 		var elm = document.createElement("img");
-		document.getElementById("player").appendChild(elm);
+		document.getElementById("blocks").appendChild(elm);
 		elm.classList.add("player");
 		elm.src = "textures/blobRight.png";
 		return elm;

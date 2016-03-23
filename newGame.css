@@ -1,25 +1,37 @@
 html,body { 
 	background: #06c;
 	vertical-align:top;
+	height:100%;
+}
+
+body {
+	margin: 0 auto;
+	width:960px;
+	background: white;
 }
 
 #blocks {
 	position: fixed;
 	float:top;
-	left: 100px;
-	top: 100px;
+	margin: 0 auto;
+	width: 1024px;
+	height: 800px;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 .block{
-	transform-origin: 50% 50% !important;
+	transform-origin: 50% 50% ;!important;
 	position: absolute;
 }
 
 #player{
-	position: fixed;
-	float:top;
-	left: 100px;
-	top: 100px;
+	position: absolute;
+	width:32px;
+	height:32px;
+	left: 16px;
+	top: 0%;
+	transform: translateX(-50%);
 }
 
 .player{
