@@ -1,3 +1,8 @@
+@keyframes birdFlap{
+	0%{background: url("textures/birds1.png");}
+	100%{background: url("textures/birds2.png");}
+}
+
 html,body { 
 	background: #06c;
 	vertical-align:top;
@@ -15,13 +20,13 @@ body {
 	float:top;
 	margin: 0 auto;
 	width: 1024px;
-	height: 800px;
+	height: 600px;
 	top: 50%;
 	transform: translateY(-50%);
 }
 
 .block{
-	transform-origin: 50% 50% ;!important;
+	transform-origin: 50% 50% !important;
 	position: absolute;
 }
 
@@ -37,7 +42,6 @@ body {
 .player{
 	transform-origin: 50% 50% !important;
 	position: absolute;
-	background: red;
 }
 
 #frontLayers{
@@ -54,7 +58,52 @@ body {
 	border: 0px;
 }
 
+.blockBackLayer{
+	transform-origin: 50% 50% !important;
+	position: absolute;
+}
+
+#clouds {
+	position: fixed;
+	float:top;
+	margin: 0 auto;
+	width: 1024px;
+	height: 800px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
 .Clouds{
 	transform-origin: 50% 50% !important;
 	position: absolute;
+}
+
+.Birds{
+	transform-origin: 50% 50% !important;
+	position: absolute;
+	animation: birdFlap 2s alternate infinite;
+	width:32px;
+	height:32px;
+}
+
+#hud{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 16px;
+	top: 0%;
+	transform: translateX(-50%);
+	text-align: center;
+}
+
+.points{
+	position: absolute;
+	width: 100%;
+	left: 47%;
+}
+
+.res{
+	position: absolute;
+	width: 100%;
+	left: 25%;
 }
